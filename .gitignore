@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# Vitest reports and artifacts
+.vitest/
