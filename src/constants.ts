@@ -19,3 +19,11 @@ export enum HttpStatus {
   ServiceUnavailable = 503,
   GatewayTimeout = 504,
 }
+
+export enum SearchFailure {
+  Aborted = 'aborted',
+  Timeout = 'timeout',
+  Http = 'http',
+  Network = 'network',
+  Unknown = 'unknown',
+}
