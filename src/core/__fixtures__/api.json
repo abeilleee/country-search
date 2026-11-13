@@ -1,0 +1,161 @@
+[
+  {
+    "name": "Spain",
+    "topLevelDomain": [".es"],
+    "alpha2Code": "ES",
+    "alpha3Code": "ESP",
+    "callingCodes": ["34"],
+    "capital": "Madrid",
+    "altSpellings": ["ES", "Kingdom of Spain"],
+    "subregion": "Southern Europe",
+    "region": "Europe",
+    "population": 47351567,
+    "latlng": [40, -4],
+    "demonym": "Spanish",
+    "area": 505992,
+    "timezones": ["UTC", "UTC+01:00"],
+    "borders": ["AND", "FRA", "GIB", "PRT", "MAR"],
+    "nativeName": "España",
+    "numericCode": "724",
+    "flags": {
+      "svg": "https://flagcdn.com/es.svg",
+      "png": "https://flagcdn.com/w320/es.png"
+    },
+    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
+    "languages": [
+      {
+        "iso639_1": "es",
+        "iso639_2": "spa",
+        "name": "Spanish",
+        "nativeName": "Español"
+      }
+    ],
+    "flag": "🇪🇸",
+    "maps": {
+      "googleMaps": "https://goo.gl/maps/138JaXW8EZzRVitY9",
+      "openStreetMaps": "https://www.openstreetmap.org/relation/1311341"
+    },
+    "populationDensity": 93.58
+  },
+  {
+    "name": "Switzerland",
+    "topLevelDomain": [".ch"],
+    "alpha2Code": "CH",
+    "alpha3Code": "CHE",
+    "callingCodes": ["41"],
+    "capital": "Bern",
+    "altSpellings": ["CH", "Swiss Confederation", "Schweiz", "Suisse", "Svizzera"],
+    "subregion": "Western Europe",
+    "region": "Europe",
+    "population": 8654622,
+    "latlng": [47, 8],
+    "demonym": "Swiss",
+    "area": 41284,
+    "timezones": ["UTC+01:00"],
+    "borders": ["AUT", "FRA", "ITA", "LIE", "DEU"],
+    "nativeName": "Schweiz",
+    "numericCode": "756",
+    "flags": {
+      "svg": "https://flagcdn.com/ch.svg",
+      "png": "https://flagcdn.com/w320/ch.png"
+    },
+    "currencies": [{ "code": "CHF", "name": "Swiss franc", "symbol": "Fr." }],
+    "languages": [
+      {
+        "iso639_1": "de",
+        "iso639_2": "deu",
+        "name": "German",
+        "nativeName": "Deutsch"
+      },
+      {
+        "iso639_1": "fr",
+        "iso639_2": "fra",
+        "name": "French",
+        "nativeName": "Français"
+      },
+      {
+        "iso639_1": "it",
+        "iso639_2": "ita",
+        "name": "Italian",
+        "nativeName": "Italiano"
+      },
+      {
+        "iso639_1": "rm",
+        "iso639_2": "roh",
+        "name": "Romansh",
+        "nativeName": "Rumantsch"
+      }
+    ],
+    "flag": "🇨🇭",
+    "maps": {
+      "googleMaps": "https://goo.gl/maps/uVuZcXaxSx5jLyEC9",
+      "openStreetMaps": "https://www.openstreetmap.org/relation/51701"
+    },
+    "populationDensity": 209.59
+  },
+  {
+    "name": "Panama",
+    "topLevelDomain": [".pa"],
+    "alpha2Code": "PA",
+    "alpha3Code": "PAN",
+    "callingCodes": ["507"],
+    "capital": "Panama City",
+    "altSpellings": ["PA", "Republic of Panama", "República de Panamá"],
+    "subregion": "Central America",
+    "region": "Americas",
+    "population": 4314767,
+    "latlng": [9, -80],
+    "demonym": "Panamanian",
+    "area": 75417,
+    "timezones": ["UTC-05:00"],
+    "borders": ["COL", "CRI"],
+    "nativeName": "Panamá",
+    "numericCode": "591",
+    "flags": {
+      "svg": "https://flagcdn.com/pa.svg",
+      "png": "https://flagcdn.com/w320/pa.png"
+    },
+    "currencies": [
+      { "code": "PAB", "name": "Panamanian balboa", "symbol": "B/." },
+      { "code": "USD", "name": "United States dollar", "symbol": "$" }
+    ],
+    "languages": [
+      {
+        "iso639_1": "es",
+        "iso639_2": "spa",
+        "name": "Spanish",
+        "nativeName": "Español"
+      }
+    ],
+    "flag": "🇵🇦",
+    "maps": {
+      "googleMaps": "https://goo.gl/maps/Es0ckykS4owF16nF6",
+      "openStreetMaps": "https://www.openstreetmap.org/relation/287668"
+    },
+    "populationDensity": 57.21
+  },
+  {
+    "name": "Antarctica",
+    "alpha2Code": "AQ",
+    "alpha3Code": "ATA",
+    "region": "Antarctic"
+  },
+  {
+    "name": "Zero Land",
+    "alpha2Code": "ZZ",
+    "alpha3Code": "ZZZ",
+    "region": "Nowhere",
+    "area": 0,
+    "population": 0
+  },
+  {
+    "name": "Empty Lists",
+    "alpha2Code": "YY",
+    "alpha3Code": "YYY",
+    "region": "Test",
+    "languages": [],
+    "currencies": [],
+    "borders": [],
+    "flags": {}
+  }
+]
