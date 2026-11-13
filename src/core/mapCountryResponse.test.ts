@@ -1,6 +1,6 @@
 import type { CountryDto, ResponseBody } from '@/types';
 import apiResponse from './__fixtures__/api.json';
-import { mapCountryResponse } from './mapCountryResponse';
+import { type Country, mapCountryResponse } from './mapCountryResponse';
 
 const response = apiResponse satisfies ResponseBody;
 
@@ -21,7 +21,7 @@ const antarctica = byName('Antarctica');
 const zeroLand = byName('Zero Land');
 const emptyLists = byName('Empty Lists');
 
-const mappedSpain = {
+const mappedSpain: Country = {
   name: 'Spain',
   region: 'Europe',
   area: 505992,
