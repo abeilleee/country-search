@@ -1,6 +1,6 @@
 import { BASE_URL, Endpoint, HttpStatus, TIMEOUT_MS } from '@/constants';
-import { HttpError } from './HttpError';
-import { searchCountries } from './searchCountries';
+import { HttpError } from '@/core/HttpError';
+import { searchCountries } from '@/core/searchCountries';
 
 describe('searchCountries', () => {
   const QUERY = 'spain';

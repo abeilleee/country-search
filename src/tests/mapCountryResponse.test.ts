@@ -1,6 +1,6 @@
+import { type Country, mapCountryResponse } from '@/core/mapCountryResponse';
 import type { CountryDto, ResponseBody } from '@/types';
 import apiResponse from './__fixtures__/api.json';
-import { type Country, mapCountryResponse } from './mapCountryResponse';
 
 const response = apiResponse satisfies ResponseBody;
 

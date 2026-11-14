@@ -1,6 +1,6 @@
 import { SearchFailure } from '@/constants';
-import { HttpError } from './HttpError';
-import { classifySearchError } from './classifySearchError';
+import { HttpError } from '@/core/HttpError';
+import { classifySearchError } from '@/core/classifySearchError';
 
 describe('classifySearchError', () => {
   it('classifies user cancellation as "aborted"', () => {

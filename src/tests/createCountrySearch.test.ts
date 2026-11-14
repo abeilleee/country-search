@@ -1,6 +1,6 @@
 import { DEFAULT_DELAY_MS } from '@/constants';
+import { createCountrySearch } from '@/core/createCountrySearch';
 import type { CountryDto } from '@/types';
-import { createCountrySearch } from './createCountrySearch';
 
 interface FetchCall {
   promise: Promise<Response>;

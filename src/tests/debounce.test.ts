@@ -1,5 +1,5 @@
 import { DEFAULT_DELAY_MS } from '@/constants';
-import { debounce } from './debounce';
+import { debounce } from '@/core/debounce';
 
 describe('debounce', () => {
   beforeEach(() => {
