@@ -1,5 +1,5 @@
 import { DEFAULT_DELAY_MS } from '@/constants';
-import { createCountrySearch } from '@/core/createCountrySearch';
+import { createCountrySearch } from '@/store/store';
 import type { CountryDto } from '@/types';
 
 interface FetchCall {
