@@ -1,3 +1,4 @@
 import './style.css';
+import { startApp } from './ui/app';
 
-document.body.append((document.createElement('p').textContent = 'start app'));
+startApp();

@@ -1,0 +1,12 @@
+:root {
+  --header-height: 60px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: var(--header-height);
+  padding: 10px;
+}
