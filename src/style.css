@@ -27,10 +27,7 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: Inter, sans-serif;
   line-height: 1.5;
 
   background-image: url('/bg.png');
