@@ -5,7 +5,7 @@ import { debounce } from '@/core/debounce';
 import { type Country, mapCountryResponse } from '@/core/mapCountryResponse';
 import { searchCountries } from '@/core/searchCountries';
 
-interface AppState {
+export interface AppState {
   countries: Country[];
   loading: boolean;
   error: SearchError | null;
@@ -69,7 +69,7 @@ export function createCountrySearch(delay = DEFAULT_DELAY_MS): Store {
       }
 
       default:
-        return { kind: SearchFailure.Unknown, message: 'Something went wrong. Please try again.' };
+        return { kind: SearchFailure.Unknown, message: 'Please try again.' };
     }
   };
 

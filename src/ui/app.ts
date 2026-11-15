@@ -1,9 +1,12 @@
 import { createDomElement } from '@/helpers/createDomElement';
+import { getViewStatus } from '@/helpers/getViewStatus';
 import { createCountrySearch } from '@/store/store';
+import { createCountryCard } from '@/ui/components/CountryCard';
 import { createFooter } from '@/ui/components/Footer';
 import { createHeader } from '@/ui/components/Header';
-import { createCountryCard } from './components/CountryCard';
-import { createSearchInput } from './components/SearchInput/SearchInput';
+import { createMessage } from '@/ui/components/Message';
+import { createSearchInput } from '@/ui/components/SearchInput';
+import { createSpinner } from '@/ui/components/Spinner';
 
 export function startApp() {
   document.body.classList.add('layout');
@@ -15,33 +18,68 @@ export function startApp() {
     classNames: ['main'],
   });
   const input = createSearchInput({ onChange: store.fetchCountries });
+  const messageContainer = createDomElement({
+    classNames: ['message'],
+  });
   const cardsContainer = createDomElement({
     classNames: ['cards'],
   });
 
-  main.append(input, cardsContainer);
+  main.append(input, messageContainer, cardsContainer);
   document.body.append(header, main, footer);
 
   const render = () => {
-    const { loading, error, countries } = store.getState();
-    const isEmpty = !loading && !error && countries.length === 0 && input.value.trim() !== '';
+    const state = store.getState();
+    const viewStatus = getViewStatus(state, input.value);
 
+    messageContainer.replaceChildren();
     cardsContainer.replaceChildren();
 
-    countries.map((country) => {
-      createCountryCard({ country, parentElement: cardsContainer });
-    });
+    switch (viewStatus) {
+      case 'error':
+        createMessage({
+          variant: 'error',
+          title: 'Something went wrong',
+          description: state.error?.message ?? '',
+          action: {
+            label: 'Retry',
+            onClick: () => store.fetchCountries(input.value),
+          },
+          parentElement: messageContainer,
+        });
 
-    if (error) {
-      return;
-    }
+        return;
 
-    if (loading) {
-      return;
-    }
+      case 'loading':
+        createSpinner({ label: 'Searching...', parentElement: messageContainer });
 
-    if (isEmpty) {
-      return;
+        return;
+
+      case 'empty':
+        createMessage({
+          variant: 'info',
+          title: 'Nothing found',
+          description: 'Try a different country name.',
+          parentElement: messageContainer,
+        });
+
+        return;
+
+      case 'idle':
+        createMessage({
+          variant: 'info',
+          title: 'Start typing a country name',
+          parentElement: messageContainer,
+        });
+
+        return;
+
+      case 'results':
+        state.countries.forEach((country) => {
+          createCountryCard({ country, parentElement: cardsContainer });
+        });
+
+        return;
     }
   };
 
