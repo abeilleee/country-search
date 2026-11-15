@@ -32,3 +32,13 @@
 
   background: var(--bg-action);
 }
+
+.interactive {
+  transition: background var(--transition-duration);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactive:hover {
+    background: var(--bg-hover);
+  }
+}

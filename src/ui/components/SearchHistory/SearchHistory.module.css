@@ -1,0 +1,30 @@
+.panel {
+  display: flex;
+  gap: 10px;
+
+  width: fit-content;
+  min-width: 100px;
+  height: fit-content;
+}
+
+.clear {
+  height: 23px;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+
+  transition: color var(--transition-duration);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .clear:hover {
+    color: var(--text-primary);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .input {
+    width: 90%;
+  }
+}

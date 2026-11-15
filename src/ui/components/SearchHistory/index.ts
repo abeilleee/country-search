@@ -1,0 +1,1 @@
+export { createSearchHistoryPanel } from './SearchHistory';

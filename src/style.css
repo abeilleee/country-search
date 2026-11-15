@@ -171,3 +171,16 @@ p {
 .cards::-webkit-scrollbar-thumb:hover {
   background: #ffffff8c;
 }
+
+.history {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 45px;
+}
+
+@media screen and (max-width: 1200px) {
+  .history {
+    width: 90%;
+  }
+}
