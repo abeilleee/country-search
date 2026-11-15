@@ -7,6 +7,7 @@
   justify-content: space-between;
 
   width: 280px;
+  height: 200px;
   padding: 8px;
   border-radius: var(--border-radius);
 
@@ -81,4 +82,18 @@
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    height: 170px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .box {
+    height: 62px;
+  }
 }

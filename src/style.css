@@ -85,7 +85,7 @@ p {
 }
 
 .main {
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -94,6 +94,12 @@ p {
   width: 100%;
   min-height: 0;
   padding: 10px 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    padding: 10px;
+  }
 }
 
 .glass {
@@ -114,4 +120,38 @@ p {
     inset 0 1px 0 rgb(255 255 255 / 55%),
     inset 0 -1px 0 rgb(255 255 255 / 15%),
     0 12px 28px rgb(0 0 0 / 25%);
+}
+
+.cards {
+  scrollbar-color: #ffffff59 transparent;
+  scrollbar-width: thin;
+
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  flex: 1;
+  gap: 22px;
+  place-content: start center;
+
+  width: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 10px 4px;
+}
+
+.cards::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #ffffff59;
+}
+
+.cards::-webkit-scrollbar-thumb:hover {
+  background: #ffffff8c;
 }
