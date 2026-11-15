@@ -134,7 +134,7 @@ export function createCountrySearch(delay = DEFAULT_DELAY_MS): Store {
     controller = current;
 
     setState({ countries: [], error: null, loading: true });
-    debouncedRun(query, current);
+    debouncedRun(query.trim(), current);
   };
 
   return {

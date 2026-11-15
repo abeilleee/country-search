@@ -1,0 +1,1 @@
+export { createSearchInput } from './SearchInput';
