@@ -1,6 +1,8 @@
 export const DEFAULT_DELAY_MS = 300;
 export const TIMEOUT_MS = 5000;
 export const BASE_URL = 'https://countries.dev';
+export const HISTORY_KEY = 'abeilleee-country-search:history';
+export const HISTORY_LIMIT = 5;
 
 export const enum Endpoint {
   Name = 'name',

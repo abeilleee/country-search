@@ -1,5 +1,6 @@
 import type { Country } from '@/core/mapCountryResponse';
 import { createDomElement } from '@/helpers/createDomElement';
+import { createButton } from '@/ui/components/Button';
 import { createChipsGroup } from '@/ui/components/ChipsGroup';
 import styles from './CountryDetails.module.css';
 
@@ -17,13 +18,6 @@ export function createCountryDetails({ country, onClose }: Props) {
   const dialog = createDomElement({
     classNames: [styles.dialog, 'glass'],
     parentElement: overlay,
-  });
-
-  const closeButton = createDomElement({
-    tag: 'button',
-    classNames: [styles.close],
-    attributes: { type: 'button', 'aria-label': 'Close' },
-    parentElement: dialog,
   });
 
   // title and flag
@@ -104,7 +98,12 @@ export function createCountryDetails({ country, onClose }: Props) {
     if (e.key === 'Escape') close();
   };
 
-  closeButton.addEventListener('click', close);
+  createButton({
+    classNames: [styles.close],
+    attributes: { 'aria-label': 'Close' },
+    onClick: close,
+    parentElement: dialog,
+  });
 
   overlay.addEventListener('mousedown', (e) => {
     if (e.target === overlay) close();

@@ -1,5 +1,6 @@
 import { createDomElement } from '@/helpers/createDomElement';
 import type { ElementOptions } from '@/types';
+import { createButton } from '@/ui/components/Button';
 import styles from './Message.module.css';
 
 type MessageVariant = 'info' | 'error';
@@ -45,15 +46,12 @@ export function createMessage({
   }
 
   if (action) {
-    const button = createDomElement({
-      tag: 'button',
+    createButton({
       classNames: [styles.action],
-      textContent: action.label,
-      attributes: { type: 'button' },
+      text: action.label,
+      onClick: action.onClick,
       parentElement: message,
     });
-
-    button.addEventListener('click', action.onClick);
   }
 
   return message;
