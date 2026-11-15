@@ -1,7 +1,9 @@
+import type { Country } from '@/core/mapCountryResponse';
 import { createDomElement } from '@/helpers/createDomElement';
 import { getViewStatus } from '@/helpers/getViewStatus';
 import { createCountrySearch } from '@/store/store';
 import { createCountryCard } from '@/ui/components/CountryCard';
+import { createCountryDetails } from '@/ui/components/CountryDetails';
 import { createFooter } from '@/ui/components/Footer';
 import { createHeader } from '@/ui/components/Header';
 import { createMessage } from '@/ui/components/Message';
@@ -27,6 +29,17 @@ export function startApp() {
 
   main.append(input, messageContainer, cardsContainer);
   document.body.append(header, main, footer);
+
+  const openCountryDetails = (country: Country) => {
+    const modal = createCountryDetails({
+      country,
+      onClose: () => {
+        modal.remove();
+      },
+    });
+
+    document.body.append(modal);
+  };
 
   const render = () => {
     const state = store.getState();
@@ -76,7 +89,11 @@ export function startApp() {
 
       case 'results':
         state.countries.forEach((country) => {
-          createCountryCard({ country, parentElement: cardsContainer });
+          createCountryCard({
+            country,
+            parentElement: cardsContainer,
+            onClick: (c) => openCountryDetails(c),
+          });
         });
 
         return;

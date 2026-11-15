@@ -1,0 +1,166 @@
+.overlay {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: #0000008c;
+}
+
+.dialog {
+  will-change: transform;
+
+  position: relative;
+  z-index: 10;
+  transform: translateZ(0);
+
+  overflow-y: auto;
+
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  padding: 28px;
+  border-radius: var(--border-radius);
+
+  animation: pop-in 0.25s ease;
+}
+
+.close {
+  cursor: pointer;
+
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  background: var(--bg-action);
+
+  transition: background 0.2s;
+}
+
+.close::before,
+.close::after {
+  content: '';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+
+  background: currentcolor;
+}
+
+.close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .close:hover {
+    background: #fff3;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  margin-bottom: 24px;
+  padding-right: 30px;
+}
+
+.title {
+  flex: 1;
+
+  min-width: 0;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+
+.flag {
+  flex-shrink: 0;
+
+  width: 72px;
+  height: 50px;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 12px #0000004d;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.group {
+  margin-bottom: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .dialog {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

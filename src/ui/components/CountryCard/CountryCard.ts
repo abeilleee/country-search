@@ -5,13 +5,18 @@ import styles from './CountryCard.module.css';
 
 interface Props extends Partial<Pick<ElementOptions, 'parentElement'>> {
   country: Country;
+  onClick?: (country: Country) => void;
 }
 
-export function createCountryCard({ country, parentElement }: Props) {
+export function createCountryCard({ country, parentElement, onClick }: Props) {
   const card = createDomElement({
     classNames: [styles.card, 'glass'],
     parentElement,
   });
+
+  if (onClick) {
+    card.addEventListener('click', () => onClick(country));
+  }
 
   const upperBox = createDomElement({
     classNames: [styles.box],
