@@ -1,0 +1,56 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+
+  width: 100%;
+  max-width: 420px;
+  max-height: 152px;
+  margin: 24px auto;
+  padding: 20px 24px;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+
+  text-align: center;
+
+  backdrop-filter: blur(16px);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.action {
+  margin-top: 4px;
+  padding: 8px 20px;
+  border: 1px solid var(--bg-action);
+  border-radius: var(--border-radius);
+
+  background: var(--bg-action);
+
+  transition: background-color var(--transition-duration) ease;
+}
+
+.action:hover {
+  background: var(--bg-hover);
+}
+
+.error {
+  border-color: var(--border-color-error);
+  background: var(--bg-error);
+}
+
+.error .title {
+  color: var(--text-error);
+}
+
+.info {
+  background: var(--bg-info);
+}
