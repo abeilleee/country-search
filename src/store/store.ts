@@ -1,9 +1,9 @@
 import { DEFAULT_DELAY_MS, SearchFailure } from '@/constants';
 import { HttpError } from '@/core/HttpError';
 import { classifySearchError } from '@/core/classifySearchError';
+import { countryCache } from '@/core/createCountryCache';
 import { debounce } from '@/core/debounce';
-import { type Country, mapCountryResponse } from '@/core/mapCountryResponse';
-import { searchCountries } from '@/core/searchCountries';
+import type { Country } from '@/core/mapCountryResponse';
 
 export interface AppState {
   countries: Country[];
@@ -79,15 +79,13 @@ export function createCountrySearch(delay = DEFAULT_DELAY_MS): Store {
     }
 
     try {
-      const response = await searchCountries(query, current.signal);
+      const countries = await countryCache.get(query, current.signal);
 
       if (!isCurrent(current)) {
         return;
       }
 
-      setState({
-        countries: response.map(mapCountryResponse),
-      });
+      setState({ countries });
     } catch (error) {
       if (!isCurrent(current)) {
         return;
