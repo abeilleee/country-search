@@ -1,0 +1,186 @@
+:root {
+  --border-radius: 22px;
+  --text-primary: #fff;
+  --text-secondary: #ffffff8d;
+  --text-error: #ffb4b4;
+  --transition-duration: 0.35s;
+  --bg-info: #ffffff0f;
+  --bg-hover: #fff3;
+  --bg-error: #ff50501a;
+  --bg-action: #ffffff1f;
+  --border-color-error: #ff787859;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: var(--text-primary);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+
+  background-image: url('/bg.png');
+  background-position: center;
+  background-size: cover;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  border: none;
+
+  font: inherit;
+  color: inherit;
+
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100dvh;
+}
+
+.main {
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  min-height: 0;
+  padding: 10px 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    padding: 10px;
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 60%;
+}
+
+.message:empty {
+  display: none;
+}
+
+.glass {
+  overflow: hidden;
+
+  border: 1px solid #ffffff1f;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgb(255 255 255 / 10%) 0%,
+    rgb(255 255 255 / 18%) 80%,
+    rgb(255 255 255 / 28%) 100%
+  );
+  backdrop-filter: blur(16px) saturate(120%);
+
+  /* inner white highlights */
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 55%),
+    inset 0 -1px 0 rgb(255 255 255 / 15%),
+    0 12px 28px rgb(0 0 0 / 25%);
+}
+
+.cards {
+  scrollbar-color: #ffffff59 transparent;
+  scrollbar-width: thin;
+
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  flex: 1;
+  gap: 22px;
+  place-content: start center;
+
+  width: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 10px 4px;
+}
+
+.cards::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #ffffff59;
+}
+
+.cards::-webkit-scrollbar-thumb:hover {
+  background: #ffffff8c;
+}
+
+.history {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 45px;
+}
+
+@media screen and (max-width: 1200px) {
+  .history {
+    width: 90%;
+  }
+}

@@ -1,0 +1,99 @@
+.card {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between;
+
+  width: 280px;
+  height: 200px;
+  padding: 8px;
+  border-radius: var(--border-radius);
+
+  transition:
+    transform var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease,
+    background-color var(--transition-duration) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-2px);
+    background-color: rgb(255 255 255 / 4.6%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 79.2%),
+      inset 0 -1px 0 rgb(255 255 255 / 61.4%),
+      0 12px 28px rgb(0 0 0 / 32.4%);
+  }
+}
+
+.box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 72px;
+  padding: 6px 0;
+}
+
+.flag {
+  width: 70px;
+  height: 50px;
+  border-radius: 8px;
+
+  object-fit: cover;
+  box-shadow: 0 4px 12px #00000054;
+}
+
+.name {
+  overflow: hidden;
+
+  /* Truncate long names to 2 lines */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  line-height: 1.2;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 16px;
+
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.meta dt {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.meta dd {
+  overflow: hidden;
+
+  margin: 0;
+
+  font-weight: 500;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    height: 170px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .box {
+    height: 62px;
+  }
+}
